@@ -11,8 +11,16 @@ resource "helm_release" "ingress_nginx" {
     value = true
   }
   set {
-    name  = "controller.service.annotations.service\\.beta\\.kubernetes\\.io/linode-loadbalancer-proxy-protocol"
+    name  = "controller.service.annotations.service\\.beta\\.kubernetes\\.io/linode-loadbalancer-default-protocol"
+    value = "tcp"
+  }
+  set {
+    name  = "controller.service.annotations.service\\.beta\\.kubernetes\\.io/linode-loadbalancer-default-proxy-protocol"
     value = "v2"
+  }
+  set {
+    name  = "controller.service.annotations.service\\.beta\\.kubernetes\\.io/linode-loadbalancer-hostname-only-ingress"
+    value = true
   }
   set {
     name  = "controller.ingressClassResource.default"
