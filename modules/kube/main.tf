@@ -1,6 +1,6 @@
 resource "linode_lke_cluster" "lke" {
   label       = "lke.tf"
-  k8s_version = "1.21"
+  k8s_version = "1.23"
   region      = "us-central"
   tags        = ["lke", "terraform"]
 
